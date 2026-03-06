@@ -13,6 +13,8 @@ console.log(cells);
 const player = ['X', 'O'];
 let currentPlayer = player[0];
 const playerIcon = document.getElementById('playerIcon');
+let selectedCell = -1;
+let isCorrect = false;
 
 if (currentPlayer == player[0]) {
   playerIcon.src = './img/player0.png';
@@ -20,9 +22,25 @@ if (currentPlayer == player[0]) {
   playerIcon.src = './img/player1.png';
 }
 
+// when cell is clicked
 cells.forEach((cell) => {
   cell.addEventListener('click', () => {
-    const index = cell.dataset.index;
-    window.location.href = `./quizes/quiz${Number(index) + 1}.html`;
+    selectedCell = cell.dataset.index;
+    window.location.href = './quiz.html';
   });
 });
+
+// when returned
+window.addEventListener('DOMContentLoaded', function () {
+  const params = new URLSearchParams(window.location.search);
+  const isCorrect = params.get('isCorrect');
+  if (isCorrect == true) {
+    //표시 추가, data 업데이트
+    isCorrect = false;
+  }
+  if (isBingo()) {
+  } //게임 종료
+});
+
+function isBingo() {}
+function turnPC() {}
