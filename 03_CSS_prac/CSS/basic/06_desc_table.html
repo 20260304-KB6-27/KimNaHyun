@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* table > tr > th {    !!!이건 안 됨
+        color: red;
+      } */
+      table > tbody > tr > th {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <!-- 웹브라우져가 <tbody> 자동으로 삽입해줌 -->
+      <tr>
+        <th>이름</th>
+        <th>지역</th>
+      </tr>
+      <tr>
+        <td>김나현</td>
+        <td>서울시</td>
+      </tr>
+    </table>
+  </body>
+</html>
