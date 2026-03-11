@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Script스니펫</title>
+    <script>
+      window.onload = function () {
+        const button = document.getElementById('button');
+
+        button.onclick = function () {
+          alert(`${this}`); // this는 해당 이벤트가 발생한 곳을 가리킴. (button)
+        };
+
+        setInterval(function () {
+          let now = new Date();
+          //   console.log(now);
+          clock.innerHTML = now.toString();
+          console.log(this);
+        }, 1000);
+      };
+    </script>
+  </head>
+
+  <body>
+    <button id="button">버 튼</button>
+  </body>
+</html>
